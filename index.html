@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Storage Pokemon</title>
 </head>
-<body>
-    
-<head>
-    <!-- Vincular CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+
 <body>
 
-    <h1>Web Storage Pokemon</h1>
+    <head>
+        <!-- Vincular CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <!-- Sección de búsqueda -->
-    <input type="text" id="pokemonInput" placeholder="Escribe un Pokémon...">
-    <button onclick="searchPokemon()">Buscar</button>
+    <body>
 
-    <!-- Resultado del Pokémon -->
-    <div id="resultado"></div>
+        <div class="contenedor">
+            <div class="columna">
 
-    <!-- Botón para guardar favoritos -->
-    <button onclick="saveFavorite()">Guardar como Favorito</button>
+                <img src="pokem.png" alt="Web Storage Pokemon">
 
-    <h2>Mis Pokemon Favoritos</h2>
-    <div id="favoritos"></div>
+                <!-- Sección de búsqueda -->
+                <input type="text" id="pokemonInput" placeholder="Escribe un Pokémon...">
+                <button onclick="searchPokemon()">Buscar</button>
 
-    <!-- Archivo JavaScript -->
-    <script src="script.js"></script>
+                <!-- Resultado del Pokémon -->
+                <div id="resultado"></div>
+
+                <!-- Botón para guardar favoritos -->
+                <button onclick="saveFavorite()">Guardar como Favorito</button>
+            </div>
+
+            <div class="columna">
+                <h2>Mis Pokemon Favoritos</h2>
+                <div id="favoritos"></div>
+            </div>
+
+        </div>
+
+        <!-- Archivo JavaScript -->
+        <script src="script.js"></script>
 
 
-</body>
+    </body>
+
 </html>
