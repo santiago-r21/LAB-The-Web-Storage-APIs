@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca un Pokémon</title>
+
+  <!-- Enlazar CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <h1>Busca un Pokémon</h1>
+
+  <div id="buscador">
+    <input id="pokemonInput" placeholder="Ej: pikachu">
+    <button id="buscarBtn">Buscar</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <div class="controls">
+    <button id="guardarBtn">💗 Guardar</button>
+    <button id="borrarTodosBtn">Borrar todos</button>
+  </div>
+
+  <hr>
+
+  <h2>Favoritos</h2>
+  <div id="favoritos"></div>
+
+  <!-- Enlazar JS -->
+  <script src="script.js"></script>
 </body>
 </html>
