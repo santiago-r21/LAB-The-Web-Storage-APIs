@@ -1,11 +1,13 @@
-// Variable global donde guardamos el Pokémon actual
-let currentPokemon = null;
+// Variable global donde se guarda el Pokemon actual
+let actualPokemon = null;
+
+let publicacion = document.getElementById("publicacion");
 
 // Función para buscar Pokémon
-function searchPokemon() {
-    let pokemonName = document.getElementById("pokemonInput").value.toLowerCase();
+function buscarPokemon() {
+    let nombrePokemon = document.getElementById("pokemonInput").value.toLowerCase();
 
-    let url = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+    let url = "https://pokeapi.co/api/v2/pokemon/" + nombrePokemon;
 
     fetch(url)
         .then(function(response) {
@@ -13,16 +15,16 @@ function searchPokemon() {
         })
         .then(function(data) {
 
-            // Guardamos el Pokémon en la variable global
-            currentPokemon = {
+            // Guardar el Pokémon en la variable global
+            actualPokemon = {
                 name: data.name,
                 image: data.sprites.front_default
             };
 
             // Mostrar en pantalla
             document.getElementById("resultado").innerHTML =
-                "<h3>" + currentPokemon.name + "</h3>" +
-                "<img src='" + currentPokemon.image + "'>";
+                "<h3>" + actualPokemon.name + "</h3>" +
+                "<img src='" + actualPokemon.image + "'>";
         })
         .catch(function(error) {
             alert("Pokémon no encontrado.");
@@ -30,51 +32,51 @@ function searchPokemon() {
 }
 
 // Función para guardar favorito
-function saveFavorite() {
+function guardarFavorito() {
 
-    if (currentPokemon == null) {
+    if (actualPokemon == null) {
         alert("Primero debes buscar un Pokémon.");
         return;
     }
 
     // Obtener lista actual
-    let favorites = JSON.parse(localStorage.getItem("favoritos"));
+    let favoritos = JSON.parse(localStorage.getItem("favoritos"));
 
-    if (!favorites) {
-        favorites = [];
+    if (!favoritos) {
+        favoritos = [];
     }
 
     // Verificar si ya existe
-    let exists = favorites.some(function(poke) {
-        return poke.name === currentPokemon.name;
+    let disponible = favoritos.some(function(poke) {
+        return poke.name === actualPokemon.name;
     });
 
-    if (exists) {
+    if (disponible) {
         alert("Este Pokémon ya está en favoritos.");
         return;
     }
 
     // Agregar al array
-    favorites.push(currentPokemon);
+    favoritos.push(actualPokemon);
 
     // Guardar en localStorage
-    localStorage.setItem("favoritos", JSON.stringify(favorites));
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
     // Actualizar pantalla
-    updateFavoritesList();
+    actualizarFavoritos();
 }
 
 // Función para listar favoritos
-function updateFavoritesList() {
+function actualizarFavoritos() {
 
-    let favorites = JSON.parse(localStorage.getItem("favoritos"));
+    let favoritos = JSON.parse(localStorage.getItem("favoritos"));
 
     let container = document.getElementById("favoritos");
     container.innerHTML = "";
 
-    if (!favorites) return;
+    if (!favoritos) return;
 
-    favorites.forEach(function(poke) {
+    favoritos.forEach(function(poke) {
         let div = document.createElement("div");
         div.innerHTML =
             "<h4>" + poke.name + "</h4>" +
@@ -84,4 +86,4 @@ function updateFavoritesList() {
 }
 
 // Ejecutar al cargar la página
-updateFavoritesList();
+actualizarFavoritos();

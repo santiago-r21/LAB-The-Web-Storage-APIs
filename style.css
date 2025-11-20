@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background: #9c9c9c;
+    padding: 80px;
     margin: 20px;
 }
 
@@ -13,5 +15,12 @@ body {
 
 #favoritos img,
 #resultado img {
-    width: 100px;
+    width: 200px;
+    height: auto;
+}
+
+#publicacion{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
 }

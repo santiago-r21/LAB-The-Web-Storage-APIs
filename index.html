@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Web Storage Pokemon</title>
 </head>
 <body>
@@ -17,13 +17,13 @@
 
     <!-- Sección de búsqueda -->
     <input type="text" id="pokemonInput" placeholder="Escribe un Pokémon...">
-    <button onclick="searchPokemon()">Buscar</button>
+    <button onclick="buscarPokemon()">Buscar</button>
 
     <!-- Resultado del Pokémon -->
     <div id="resultado"></div>
 
     <!-- Botón para guardar favoritos -->
-    <button onclick="saveFavorite()">Guardar como Favorito</button>
+    <button onclick="guardarFavorito()">Guardar como Favorito</button>
 
     <h2>Mis Pokemon Favoritos</h2>
     <div id="favoritos"></div>
@@ -31,6 +31,7 @@
     <!-- Archivo JavaScript -->
     <script src="script.js"></script>
 
+    <div id="publicacion"></div>
 
 </body>
 </html>
