@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#resultado, #favoritos div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 15px auto;
+    width: 200px;
+}
+
+#favoritos img,
+#resultado img {
+    width: 100px;
+}

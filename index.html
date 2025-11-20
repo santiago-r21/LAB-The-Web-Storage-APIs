@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Web Storage Pokemon</title>
 </head>
 <body>
     
+<head>
+    <!-- Vincular CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Web Storage Pokemon</h1>
+
+    <!-- Sección de búsqueda -->
+    <input type="text" id="pokemonInput" placeholder="Escribe un Pokémon...">
+    <button onclick="searchPokemon()">Buscar</button>
+
+    <!-- Resultado del Pokémon -->
+    <div id="resultado"></div>
+
+    <!-- Botón para guardar favoritos -->
+    <button onclick="saveFavorite()">Guardar como Favorito</button>
+
+    <h2>Mis Pokemon Favoritos</h2>
+    <div id="favoritos"></div>
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
+
+
 </body>
 </html>
